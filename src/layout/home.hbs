@@ -1,0 +1,38 @@
+<div class="text-center mb-5">
+  <h3 class="mb-5">Oauth2 Server Demo</h3>
+  <p>Use this server to test your OAuth2 client.</p>
+  <hr />
+</div>
+
+<div class="d-inline-block mb-5">
+  <h4>Server configuration details:</h4>
+  <table class="table table-responsive">
+    <tr>
+      <td>Client ID</td>
+      <td><code>demo-client-id-4aGl</code></td>
+    </tr>
+    <tr>
+      <td>Client Secret</td>
+      <td><code>demo-client-secret-FR5v</code></td>
+    </tr>
+    <tr>
+      <td>Authorization endpoint (GET)</td>
+      <td><code>http://localhost:4321/authorization</code></td>
+    </tr>
+    <tr>
+      <td>Token endpoint (POST)</td>
+      <td><code>http://localhost:4321/oauth/token</code></td>
+    </tr>
+  </table>
+</div>
+
+<h4><code>/user-info</code> endpoint response:</h4>
+<pre><code>
+POST: http://localhost:4321/user-info
+
+{
+  "id": 987,
+  "name": "Sample Name",
+  "email": "sample.email@example.com",
+}
+</code></pre>
