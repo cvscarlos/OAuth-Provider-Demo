@@ -2,7 +2,8 @@
   "type": "module",
   "scripts": {
     "start": "node src/app.js",
-    "dev": "nodemon src/app.js --ext js,hbs"
+    "dev": "nodemon src/app.js --ext js,hbs",
+    "build": "echo 'No build required'"
   },
   "dependencies": {
     "@node-oauth/oauth2-server": "^5.2.0",
