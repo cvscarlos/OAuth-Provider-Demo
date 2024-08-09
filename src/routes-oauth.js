@@ -18,7 +18,15 @@ export async function token(req, res) {
 	const request = new OAuth2Server.Request(req);
 	const response = new OAuth2Server.Response(res);
 	const token = await oauth.token(request, response);
-	res.json({ access_token: token.accessToken });
+	const data = {
+		access_token: token.accessToken,
+		token_type: 'Bearer',
+		expires_in: token.accessTokenExpiresAt
+			? Math.round((token.accessTokenExpiresAt.getTime() - Date.now()) / 1000)
+			: null,
+		refresh_token: token.refreshToken,
+	};
+	res.json(data);
 }
 
 export async function authMiddleware(req, res, next) {

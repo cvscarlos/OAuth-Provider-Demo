@@ -1,11 +1,11 @@
 import OAuth2Server from '@node-oauth/oauth2-server';
 
 const demoClientId = 'demo-client-id-4aGl';
-const client = {
+const demoClient = {
 	id: demoClientId,
 	clientSecret: 'demo-client-secret-FR5v',
 	grants: ['authorization_code'],
-	redirectUris: ['any'],
+	redirectUris: ['https://example.com/'],
 };
 
 const authorizationCodes = {};
@@ -14,8 +14,8 @@ const userDataByToken = {};
 const oauth = new OAuth2Server({
 	model: {
 		async getClient(clientId) {
-			if (clientId === demoClientId) return client;
-			return false;
+			if (clientId === demoClientId) return demoClient;
+			else return false;
 		},
 
 		async saveAuthorizationCode(code, client, user) {
@@ -48,7 +48,9 @@ const oauth = new OAuth2Server({
 			return token;
 		},
 
-		validateRedirectUri() {
+		async validateRedirectUri() {
+			// this method is implemented only because it is a fake server
+			// on production, you should rmeove it to use the default implementation
 			return true;
 		},
 	},
