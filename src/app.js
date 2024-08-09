@@ -11,7 +11,7 @@ app.use('/static', express.static('public'));
 app.get(
 	'/',
 	routeHandler((req, res) => {
-		res.send(htmlTemplate({ host: 'http://localhost:4321' }, '/home.hbs'));
+		res.send(htmlTemplate({ host: 'https://oauth-provider-demo.onrender.com' }, '/home.hbs'));
 	}),
 );
 
