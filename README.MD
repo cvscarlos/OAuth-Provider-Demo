@@ -1,6 +1,6 @@
-# OAuth Provider Demo
+# OAuth2 Provider Demo
 
-A demo OAuth provider that you can use to test your client applications.
+A demo OAuth2 provider that you can use to test your client applications.
 
 ## Getting Started
 
